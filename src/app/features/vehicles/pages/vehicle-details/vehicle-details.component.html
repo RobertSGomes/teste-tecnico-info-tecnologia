@@ -1,0 +1,10 @@
+<app-button label="Voltar" (handleClick)="handleGoBack()" />
+
+<ng-container *ngIf="vehicle; else loading">
+  id: {{ vehicle.id }} - placa: {{ vehicle.placa | mask: MASKS.PLATE }} -
+  chassi: {{ vehicle.chassi | mask: MASKS.CHASSI }} - renavam:
+  {{ vehicle.renavam | mask: MASKS.RENAVAM }} - modelo: {{ vehicle.modelo }} -
+  marca: {{ vehicle.marca }} - ano:
+  {{ vehicle.ano }}
+</ng-container>
+<ng-template #loading> Carregando detalhes do veículo... </ng-template>

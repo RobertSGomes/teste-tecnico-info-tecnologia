@@ -1,0 +1,30 @@
+<mat-form-field
+  appearance="outline"
+  [subscriptSizing]="subscriptSizing()"
+  class="input"
+>
+  <mat-label>{{ label() }}</mat-label>
+
+  <input
+    matInput
+    [formControl]="internalControl"
+    [placeholder]="placeholder()"
+    [matDatepicker]="picker"
+    [min]="min()"
+    [max]="max()"
+    readonly
+  />
+
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+  <mat-datepicker
+    #picker
+    startView="multi-year"
+    (yearSelected)="handleYearSelected($event, picker)"
+  ></mat-datepicker>
+
+  <mat-hint *ngIf="hintLabel()">{{ hintLabel() }}</mat-hint>
+  <mat-error *ngIf="control().invalid && control().touched && errorLabel">
+    {{ errorLabel() }}
+  </mat-error>
+</mat-form-field>

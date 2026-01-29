@@ -1,0 +1,8 @@
+{
+  "Chevrolet": ["Onix", "Cruze", "Tracker"],
+  "Fiat": ["Argo", "Mobi", "Toro"],
+  "Ford": ["Ka", "Ranger", "Bronco"],
+  "Honda": ["Civic", "HR-V", "Fit"],
+  "Toyota": ["Corolla", "Hilux", "Yaris"],
+  "Volkswagen": ["Gol", "Polo", "T-Cross"]
+}

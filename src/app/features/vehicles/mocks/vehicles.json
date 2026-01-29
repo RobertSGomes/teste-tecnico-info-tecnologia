@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "placa": "ABC1D23",
+    "chassi": "9BWZZZ377VT004251",
+    "renavam": "12345678901",
+    "modelo": "Gol",
+    "marca": "Volkswagen",
+    "ano": 2018
+  },
+  {
+    "id": "2",
+    "placa": "DEF4G56",
+    "chassi": "8APZZZ377VT009876",
+    "renavam": "23456789012",
+    "modelo": "Onix",
+    "marca": "Chevrolet",
+    "ano": 2020
+  },
+  {
+    "id": "3",
+    "placa": "HIJ7K89",
+    "chassi": "9C2ZZZ377VT001234",
+    "renavam": "34567890123",
+    "modelo": "Corolla",
+    "marca": "Toyota",
+    "ano": 2019
+  },
+  {
+    "id": "4",
+    "placa": "LMN0P12",
+    "chassi": "3FAZZZ377VT005678",
+    "renavam": "45678901234",
+    "modelo": "Civic",
+    "marca": "Honda",
+    "ano": 2021
+  },
+  {
+    "id": "5",
+    "placa": "QRS3T45",
+    "chassi": "1HGZZZ377VT008901",
+    "renavam": "56789012345",
+    "modelo": "HB20",
+    "marca": "Hyundai",
+    "ano": 2022
+  }
+]

@@ -1,0 +1,54 @@
+<app-button label="Voltar" (handleClick)="handleGoBack()" />
+
+<form [formGroup]="form">
+  <app-input
+    [control]="getControl('placa')"
+    label="Placa"
+    placeholder="Digite a placa do veículo"
+    errorLabel="Informe uma placa válida"
+    [mask]="masks.PLATE"
+  />
+  <app-input
+    [control]="getControl('chassi')"
+    label="Chassi"
+    placeholder="Digite o chassi do veículo"
+    errorLabel="Informe um chassi válido"
+    [mask]="masks.CHASSI"
+  />
+  <app-input
+    [control]="getControl('renavam')"
+    label="Renavam"
+    placeholder="Digite o renavam do veículo"
+    errorLabel="Informe um renavam válido"
+    [mask]="masks.RENAVAM"
+  />
+  <app-select-input
+    [control]="getControl('marca')"
+    [options]="brands"
+    label="Marca"
+    placeholder="Digite a marca do veículo"
+    errorLabel="Informe a marca do veículo"
+    clearable
+  />
+  <app-select-input
+    [control]="getControl('modelo')"
+    [options]="models"
+    label="Modelo"
+    placeholder="Digite o modelo do veículo"
+    errorLabel="Informe o modelo do veículo"
+    clearable
+  />
+  <app-year-picker
+    [control]="getControl('ano')"
+    label="Ano"
+    placeholder="Digite o ano do veículo"
+    errorLabel="Informe o ano do veículo"
+    [min]="1900"
+    [max]="currentYear"
+  />
+  <app-button
+    label="{{ isEdit ? 'Atualizar Veículo' : 'Cadastrar Veículo' }}"
+    [disabled]="form.invalid"
+    (handleClick)="handleSubmit()"
+  />
+</form>

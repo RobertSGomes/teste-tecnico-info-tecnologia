@@ -1,0 +1,7 @@
+<button
+  [disabled]="disabled()"
+  (click)="$event.preventDefault(); handleClick.emit()"
+  class="button"
+>
+  {{ label() }}
+</button>

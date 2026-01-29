@@ -1,0 +1,21 @@
+<mat-form-field
+  appearance="outline"
+  [subscriptSizing]="subscriptSizing()"
+  class="input"
+>
+  <mat-label>{{ label() }}</mat-label>
+  <input
+    matInput
+    [formControl]="control()"
+    [placeholder]="placeholder()"
+    [minlength]="minLength() || null"
+    [maxlength]="maxLength() || null"
+    [mask]="mask()"
+    [prefix]="prefix()"
+    [suffix]="suffix()"
+  />
+  <mat-hint *ngIf="hintLabel()">{{ hintLabel() }}</mat-hint>
+  <mat-error *ngIf="control().invalid && control().touched && errorLabel">
+    {{ errorLabel() }}
+  </mat-error>
+</mat-form-field>
