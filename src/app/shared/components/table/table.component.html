@@ -1,0 +1,96 @@
+<div class="table-wrapper">
+  @if (isLoading()) {
+    <app-loading [label]="loadingLabel()" />
+  }
+  <mat-table
+    [dataSource]="records()"
+    class="table"
+  >
+    @for (column of columns(); track column.id) {
+      <ng-container [matColumnDef]="column.id">
+        <mat-header-cell
+          *matHeaderCellDef
+          [ngStyle]="{
+            'max-width': `${column.maxWidth}px`,
+            'min-width': `${column.minWidth}px`,
+          }"
+        >
+          {{ column.headerLabel }}
+        </mat-header-cell>
+        <mat-cell
+          *matCellDef="let row"
+          [ngStyle]="{
+            'max-width': `${column.maxWidth}px`,
+            'min-width': `${column.minWidth}px`,
+          }"
+        >
+          {{ column.rowLabel(row) }}
+        </mat-cell>
+      </ng-container>
+    }
+
+    @if (actions()?.length) {
+      <ng-container matColumnDef="actions">
+        <mat-header-cell
+          *matHeaderCellDef
+          [ngStyle]="{
+            'max-width': '80px',
+            'min-width': '80px',
+          }"
+        >
+          {{ actions()!.length === 1 ? 'Ação' : 'Ações' }}
+        </mat-header-cell>
+        <mat-cell
+          *matCellDef="let row"
+          [ngStyle]="{
+            'max-width': '80px',
+            'min-width': '80px',
+          }"
+        >
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="menu"
+          >
+            <app-icon name="more_vert" />
+          </button>
+          <mat-menu #menu>
+            @for (action of actions(); track action.id) {
+              <button
+                mat-menu-item
+                (click)="action.handleClick(row)"
+              >
+                @if (action.icon) {
+                  <app-icon
+                    [name]="action.icon"
+                    size="xs"
+                  />
+                }
+
+                {{ action.label }}
+              </button>
+            }
+          </mat-menu>
+        </mat-cell>
+      </ng-container>
+    }
+
+    <div
+      *matNoDataRow
+      class="table-no-data-row"
+    >
+      <app-icon name="warning_amber" />
+      <span>{{ noDataLabel() }}</span>
+    </div>
+
+    <mat-header-row
+      *matHeaderRowDef="getDisplayedColumns(); sticky: true"
+    ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: getDisplayedColumns()"></mat-row>
+  </mat-table>
+  <mat-divider />
+  <mat-paginator
+    [length]="recordsLength()"
+    [pageSizeOptions]="pageSizeOptions()"
+    showFirstLastButtons
+  />
+</div>

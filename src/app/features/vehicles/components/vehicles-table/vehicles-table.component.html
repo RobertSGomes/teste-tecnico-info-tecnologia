@@ -1,0 +1,9 @@
+<app-table
+  [records]="records()"
+  [recordsLength]="recordsLength()"
+  [isLoading]="isLoading()"
+  loadingLabel="Carregando Veículos..."
+  [columns]="columns"
+  [actions]="actions"
+  (handlePaginatorChange)="handlePaginatorChange.emit($event)"
+/>

@@ -1,3 +1,16 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { vehicleRoutes } from './features/vehicles/vehicle.routes';
+
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/vehicles',
+    pathMatch: 'full',
+  },
+  ...vehicleRoutes,
+  {
+    path: '**',
+    redirectTo: '/vehicles',
+  },
+];

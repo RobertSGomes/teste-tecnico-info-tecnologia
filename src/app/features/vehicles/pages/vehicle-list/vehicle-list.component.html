@@ -1,0 +1,27 @@
+<section class="vehicle-list-container">
+  <div class="vehicle-list-header">
+    <div class="vehicle-list-header-left">
+      <span class="vehicle-list-title">Lista de Veículos</span>
+      <span class="vehicle-list-subtitle">
+        Consulte e gerencie os veículos cadastrados
+      </span>
+    </div>
+    <app-button
+      label="Novo Veículo"
+      icon="add"
+      (handleClick)="handleCreateVehicle()"
+    />
+  </div>
+
+  <div class="vehicle-list-body">
+    <app-vehicles-table
+      [records]="vehicles"
+      [recordsLength]="vehiclesLength"
+      [isLoading]="isLoading"
+      (handlePaginatorChange)="handlePaginatorChange($event)"
+      (handleViewVehicleDetails)="handleViewVehicleDetails($event)"
+      (handleEditVehicle)="handleEditVehicle($event)"
+      (handleDeleteVehicle)="handleDeleteVehicle($event)"
+    />
+  </div>
+</section>

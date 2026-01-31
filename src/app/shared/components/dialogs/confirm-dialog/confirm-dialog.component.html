@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>{{ data.title || 'Confirmação' }}</h2>
+
+<mat-dialog-content>
+  <p [innerHTML]="data.message"></p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <app-button
+    [label]="data.cancelText || 'Cancelar'"
+    variant="secondary"
+    (handleClick)="handleCancel()"
+  />
+  <app-button
+    [label]="data.confirmText || 'Confirmar'"
+    (handleClick)="handleConfirm()"
+  />
+</mat-dialog-actions>

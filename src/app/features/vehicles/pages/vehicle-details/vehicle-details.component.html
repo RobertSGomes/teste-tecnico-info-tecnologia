@@ -1,0 +1,56 @@
+<section class="vehicle-details-container">
+  <div class="vehicle-details-header">
+    <div class="vehicle-details-header-left">
+      <span class="vehicle-details-title">Detalhes do Veículo</span>
+      <span class="vehicle-details-subtitle">
+        Informações completas do veículo
+      </span>
+    </div>
+    <app-button
+      label="Voltar"
+      (handleClick)="handleGoBack()"
+    />
+  </div>
+
+  <div class="vehicle-details-body">
+    @if (isLoading) {
+      <app-loading label="Carregando detalhes do veículo..." />
+    }
+
+    <app-detail-cell
+      title="ID"
+      [description]="vehicle?.id"
+      [isLoading]="isLoading"
+    />
+    <app-detail-cell
+      title="Placa"
+      [description]="vehicle?.placa | mask: 'PLATE'"
+      [isLoading]="isLoading"
+    />
+    <app-detail-cell
+      title="Chassi"
+      [description]="vehicle?.chassi | mask: 'CHASSI'"
+      [isLoading]="isLoading"
+    />
+    <app-detail-cell
+      title="Renavam"
+      [description]="vehicle?.renavam | mask: 'RENAVAM'"
+      [isLoading]="isLoading"
+    />
+    <app-detail-cell
+      title="Marca"
+      [description]="vehicle?.marca"
+      [isLoading]="isLoading"
+    />
+    <app-detail-cell
+      title="Modelo"
+      [description]="vehicle?.modelo"
+      [isLoading]="isLoading"
+    />
+    <app-detail-cell
+      title="Ano"
+      [description]="vehicle?.ano"
+      [isLoading]="isLoading"
+    />
+  </div>
+</section>

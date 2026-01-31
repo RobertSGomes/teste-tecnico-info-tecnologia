@@ -1,0 +1,16 @@
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.loading-overlay span {
+  font-weight: 500;
+  color: #ffffff;
+}

@@ -1,0 +1,107 @@
+<section class="vehicle-upsert-container">
+  <div class="vehicle-upsert-header">
+    <div class="vehicle-upsert-header-left">
+      <span class="vehicle-upsert-title">
+        {{ isEdit ? 'Editar' : 'Novo' }} Veículo
+      </span>
+      <span class="vehicle-upsert-subtitle">
+        {{
+          isEdit
+            ? 'Atualize as informações do veículo'
+            : 'Informe os dados do veículo'
+        }}
+      </span>
+    </div>
+    <app-button
+      label="Voltar"
+      (handleClick)="handleGoBack()"
+    />
+  </div>
+  <div class="vehicle-upsert-body">
+    @if (isLoading) {
+      <app-loading label="Carregando detalhes do veículo..." />
+    }
+
+    <form
+      [formGroup]="form"
+      class="form"
+    >
+      <div class="form-row">
+        <app-input
+          [control]="getControl('placa')"
+          label="Placa"
+          placeholder="Digite a placa do veículo"
+          errorLabel="Informe uma placa válida"
+          [mask]="masks.PLATE"
+          class="form-input"
+        />
+      </div>
+      <div class="form-row">
+        <app-input
+          [control]="getControl('chassi')"
+          label="Chassi"
+          placeholder="Digite o chassi do veículo"
+          errorLabel="Informe um chassi válido"
+          [mask]="masks.CHASSI"
+          class="form-input"
+        />
+      </div>
+      <div class="form-row">
+        <app-input
+          [control]="getControl('renavam')"
+          label="Renavam"
+          placeholder="Digite o renavam do veículo"
+          errorLabel="Informe um renavam válido"
+          [mask]="masks.RENAVAM"
+          class="form-input"
+        />
+      </div>
+      <div class="form-row">
+        <app-select-input
+          [control]="getControl('marca')"
+          [options]="brands"
+          [isLoading]="isLoadingBrands"
+          label="Marca"
+          placeholder="Digite a marca do veículo"
+          errorLabel="Informe a marca do veículo"
+          clearable
+          class="form-input"
+        />
+        <app-select-input
+          [control]="getControl('modelo')"
+          [options]="models"
+          [isLoading]="isLoadingModels"
+          label="Modelo"
+          placeholder="Digite o modelo do veículo"
+          errorLabel="Informe o modelo do veículo"
+          clearable
+          class="form-input"
+        />
+      </div>
+      <div class="form-row">
+        <app-year-picker
+          [control]="getControl('ano')"
+          label="Ano"
+          placeholder="Digite o ano do veículo"
+          errorLabel="Informe o ano do veículo"
+          [min]="1900"
+          [max]="currentYear"
+          class="form-input"
+        />
+      </div>
+    </form>
+    <div class="form-footer">
+      <app-button
+        label="Cancelar"
+        variant="secondary"
+        [disabled]="isSaving"
+        (handleClick)="handleCancel()"
+      />
+      <app-button
+        label="{{ isEdit ? 'Salvar Alterações' : 'Cadastrar Veículo' }}"
+        [disabled]="form.invalid || isSaving"
+        (handleClick)="handleSubmit()"
+      />
+    </div>
+  </div>
+</section>

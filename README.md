@@ -1,59 +1,87 @@
-# TesteTecnicoInfoTecnologia
+# 🚗 Teste Técnico Info Tecnologia
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.17.
+Aplicação **CRUD completo de veículos** desenvolvida em **Angular** como parte de um teste técnico. Permite visualizar, cadastrar, editar e excluir veículos utilizando dados mockados.
 
-## Development server
+## 📌 Sumário
 
-To start a local development server, run:
+- 📌 [Descrição](#descrição)
+- ⚙️ [Tecnologias](#tecnologias)
+- 🚀 [Funcionalidades](#funcionalidades)
+- 🛠️ [Instalação](#instalação)
+- ▶️ [Executar o Projeto](#executar-o-projeto)
+- 🔍 [Estrutura do Projeto](#estrutura-do-projeto)
+
+## 📌 Descrição
+
+Este projeto foi gerado com **Angular CLI (versão 19.2.17)** e implementa um sistema básico de gerenciamento de veículos com funcionalidades de CRUD (criar, ler, atualizar e excluir).
+
+Ideal para avaliação técnica ou como base para estudos em **Angular + TypeScript**.
+
+## ⚙️ Tecnologias
+
+O projeto utiliza as seguintes ferramentas:
+
+- 🟦 **Angular CLI** – estrutura principal do front‑end
+- 🔷 **TypeScript** – linguagem de programação principal
+- 📄 **HTML / CSS** – marcação e estilos da interface
+- ⚙️ Angular Services, Components e Routing para organização interna do app
+
+## 🚀 Funcionalidades
+
+✔️ Listagem de veículos
+✔️ Detalhes de um veículo
+✔️ Criação de novos veículos
+✔️ Edição de veículos existentes
+✔️ Exclusão de veículos
+✔️ Dados mockados para facilitar testes e integração
+
+## 🛠️ Instalação
+
+Siga os passos abaixo para rodar o projeto localmente:
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/RobertSGomes/teste-tecnico-info-tecnologia.git
+   ```
+
+2. Entre na pasta do projeto:
+
+   ```bash
+   cd teste-tecnico-info-tecnologia
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+## ▶️ Executar o Projeto
+
+Para iniciar o servidor de desenvolvimento:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abra o navegador e acesse:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+O Angular fará recarregamento automático ao salvar alterações no código.
 
-```bash
-ng generate --help
+## 🔍 Estrutura do Projeto
+
+O projeto foi organizado em módulos e features, com componentes separados por responsabilidade. Entre os principais diretórios estão:
+
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
+src/
+├─ app/
+│  ├─ core/                   # Services core da aplicação
+│  ├─ features/vehicles/      # CRUD de veículos
+│  ├─ shared/                 # Componentes, Constants, Helpers, Interfaces, Pipes e Types reutilizáveis
+│  └─ layouts/                # Layouts
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

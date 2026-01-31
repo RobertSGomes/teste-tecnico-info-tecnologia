@@ -1,0 +1,49 @@
+@switch (variant()) {
+  @case ('tertiary') {
+    <button
+      mat-flat-button
+      [disabled]="disabled()"
+      (click)="$event.preventDefault(); handleClick.emit()"
+    >
+      @if (icon()) {
+        <app-icon
+          [name]="icon()!"
+          size="xs"
+        />
+      }
+      {{ label() }}
+    </button>
+  }
+
+  @case ('secondary') {
+    <button
+      mat-stroked-button
+      [disabled]="disabled()"
+      (click)="$event.preventDefault(); handleClick.emit()"
+    >
+      @if (icon()) {
+        <app-icon
+          [name]="icon()!"
+          size="xs"
+        />
+      }
+      {{ label() }}
+    </button>
+  }
+
+  @default {
+    <button
+      mat-flat-button
+      [disabled]="disabled()"
+      (click)="$event.preventDefault(); handleClick.emit()"
+    >
+      @if (icon()) {
+        <app-icon
+          [name]="icon()!"
+          size="xs"
+        />
+      }
+      {{ label() }}
+    </button>
+  }
+}
