@@ -84,6 +84,4 @@ src/
 │  ├─ features/vehicles/      # CRUD de veículos
 │  ├─ shared/                 # Componentes, Constants, Helpers, Interfaces, Pipes e Types reutilizáveis
 │  └─ layouts/                # Layouts
-├─ assets/
-└─ environments/
 ```
