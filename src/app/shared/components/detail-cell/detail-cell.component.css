@@ -1,0 +1,14 @@
+.detail-cell-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.detail-cell-title {
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.detail-cell-subtitle {
+  color: var(--color-gray);
+}

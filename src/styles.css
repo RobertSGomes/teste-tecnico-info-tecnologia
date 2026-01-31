@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-white: #f6f6f6;
+  --color-black: #000;
+  --color-gray: #292929;
+
+  --color-primary: #375098;
+  --color-primary-hover: #172448;
+  --color-primary-disabled: #93b4ff;
+
+  --color-success: #1b5e20;
+  --color-error: #b71c1c;
+
+  --color-border: #f1f1f1;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:not(.mat-icon) {
+  font-family: Roboto, 'Helvetica Neue', sans-serif !important;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--color-white);
+}
+
+.snackbar-success .mat-mdc-snackbar-surface {
+  background-color: var(--color-success) !important;
+  color: white !important;
+}
+
+.snackbar-error .mat-mdc-snackbar-surface {
+  background-color: var(--color-error) !important;
+  color: white !important;
+}

@@ -1,0 +1,9 @@
+{
+  "Chevrolet": ["Onix", "Cruze", "Tracker", "S10", "Spin"],
+  "Fiat": ["Argo", "Mobi", "Toro", "Pulse", "Strada"],
+  "Ford": ["Ka", "Ranger", "Bronco", "EcoSport", "Territory"],
+  "Honda": ["Civic", "HR-V", "Fit", "City", "WR-V"],
+  "Toyota": ["Corolla", "Hilux", "Yaris", "Corolla Cross", "Etios"],
+  "Volkswagen": ["Gol", "Polo", "T-Cross", "Virtus", "Nivus"],
+  "Hyundai": ["HB20", "HB20S", "Creta", "Tucson", "Elantra"]
+}

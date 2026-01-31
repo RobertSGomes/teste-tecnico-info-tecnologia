@@ -1,0 +1,28 @@
+<mat-form-field
+  appearance="outline"
+  [subscriptSizing]="subscriptSizing()"
+  class="input"
+>
+  <mat-label>{{ label() }}</mat-label>
+
+  <input
+    matInput
+    [formControl]="control()"
+    [placeholder]="placeholder()"
+    [minlength]="minLength() || null"
+    [maxlength]="maxLength() || null"
+    [mask]="mask()"
+    [prefix]="prefix()"
+    [suffix]="suffix()"
+  />
+
+  @if (hintLabel()) {
+    <mat-hint>{{ hintLabel() }}</mat-hint>
+  }
+
+  @if (control().invalid && control().touched && errorLabel()) {
+    <mat-error>
+      {{ errorLabel() }}
+    </mat-error>
+  }
+</mat-form-field>

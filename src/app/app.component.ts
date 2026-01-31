@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { COMPONENTS_IMPORTS } from './shared/components';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [COMPONENTS_IMPORTS, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'teste-tecnico-info-tecnologia';
-}
+export class AppComponent {}
